@@ -1,0 +1,130 @@
+/*
+ TODO：请补充代码
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    background-color: #a6b1e1;
+    width: 100%;
+    height: 427px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    width: 1024px;
+    height: 427px;
+
+}
+
+#lanqiao {
+    font-size: 18px;
+    color: white;
+    margin-top: 3px;
+    margin-right: 365px;
+}
+
+.else p {
+    font-size: 16px;
+    margin-top: -11px;
+    padding: 15px;
+    color: white;
+}
+
+.top {
+    width: 1024px;
+    display: flex;
+    flex-direction: row;
+}
+
+.else {
+    display: flex;
+    flex-direction: row;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lanqiao {
+    margin-top: 30px;
+    font-size: 45px;
+    color: black;
+}
+
+.fengfu {
+    margin-top: 62px;
+    font-size: 21px;
+    font-weight: 200;
+}
+
+.join {
+    margin-top: 36px;
+    padding: 8px;
+    color: #efbfbf;
+    border-radius: 2px;
+    border: 2px #efbfbf solid;
+    box-shadow: inset 0 0 2px #efbfbf;
+}
+
+.home {
+    margin-top: 74px;
+    width: 1024px;
+    height: 302px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.home .title {
+    font-size: 30px;
+    font-weight: 200;
+    color: black;
+
+}
+
+.home .art {
+    font-size: 18px;
+    color: #aaa;
+    line-height: 1.4em;
+}
+
+.home .item {
+    width: 500px;
+    height: 144px;
+}
+
+.footer {
+    width: 100%;
+    border-top: #aaa 1px solid;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.tubiao {
+    margin-top: 30px;
+}
+
+.beian {
+    margin-top: 10px;
+}
