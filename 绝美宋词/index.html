@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>绝美宋词</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1 style="text-align: center">输入关键字，找一首词</h1>
+        <!-- TODO：待补充代码 -->
+        <div class="search-form">
+            <input type="text" id="search" ref="input" class="search" @input="search()" placeholder="词牌名 词句 词人" />
+            <ul class="suggestions">
+                <li v-for="(item,index) in showList" :key="index">
+                    <span class="poet" v-html="highlight(item.poetry_content)"></span>
+                    <span class="title" v-html="highlight(item.title)+'-'+highlight(item.author)"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            // TODO：待补充代码
+            data() {
+                return {
+                    keyword: '',
+                    poems: [],
+                    showList: []
+                }
+            },
+            created() {
+                axios.get('./data.json').then((res) => {
+                    this.poems = res.data
+                })
+            },
+            methods: {
+                search(value) {
+                    let keyword = this.$refs.input.value
+                    this.keyword = keyword
+                    let newarr = this.poems.filter((item) => {
+                        if ((item.author.search(keyword) != -1 || item.poetry_content.search(keyword) != -1 || item.title.search(keyword) != -1) && keyword.length != 0) {
+                            return item
+                        }
+                    })
+                    this.showList = newarr
+                },
+                highlight(text) {
+                    return text.replaceAll(this.keyword, `<span class="highlight">${this.keyword}</span>`)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
